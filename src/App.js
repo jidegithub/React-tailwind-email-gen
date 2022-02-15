@@ -10,7 +10,7 @@ function App() {
         <div className="flex flex-wrap">
           <div className="w-32 mb-2 md:mb-1 flex flex-col md:flex">
             <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Order Date</label>
-            <p className="inline-block hidden md:block">{Date.now()}</p>
+            <p className="inline-block hidden md:block">{new Date().toLocaleDateString('en-us', {year:"numeric", month:"short", day:"numeric"}) }</p>
           </div>
 
           <div className="w-32 mb-2 md:mb-1 flex flex-col md:flex">
@@ -36,40 +36,113 @@ function App() {
 
       <div className="flex flex-wrap justify-between mb-8">
         <div className="md:w-1/3 mb-2 md:mb-0">
-          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Vendor Details</label>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Billing company name" x-model="billing.name"/>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Billing company address" x-model="billing.address"/>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Additional info" x-model="billing.extra"/>
+          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide border-b pb-2">Vendor Details</label>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Name</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">AFEX Nigeria Limited</p>
+            </div>
+          </div>
+
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Address</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">3rd Floor, Yobe Investment House</p>
+            </div>
+          </div>
+
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">TIN No.</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">140401</p>
+            </div>
+          </div>
         </div>
+
         <div className="md:w-1/3">
-          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Contact Details</label>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Your company name" x-model="from.name"/>
+          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide border-b pb-2">Contact Details</label>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Name</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Agricorp Food & Spices Unit</p>
+            </div>
+          </div>
 
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Your company address" x-model="from.address"/>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Contact Person</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">John Chukwuma</p>
+            </div>
+          </div>
 
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Additional info" x-model="from.extra"/>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Phone No</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">+234-847-489-3992</p>
+            </div>
+          </div>
+          
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Email</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">john.chukwuma@onecapital.ae</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="flex flex-wrap justify-between mb-8">
         <div className="md:w-1/3 mb-2 md:mb-0">
-          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Invoice Address</label>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Billing company name" x-model="billing.name"/>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Billing company address" x-model="billing.address"/>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Additional info" x-model="billing.extra"/>
+          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide border-b pb-2">Invoice Address</label>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Name</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Agricorp International Development Limited</p>
+            </div>
+          </div>
+
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Email</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">account@agricorpinternational.com</p>
+            </div>
+          </div>
+
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Payment Term</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Payment within 7 days after delivery or pickup</p>
+            </div>
+          </div>
         </div>
+
         <div className="md:w-1/3">
-          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide">Delivery Details</label>
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Your company name" x-model="from.name"/>
+          <label className="text-gray-800 block mb-1 font-bold text-sm tracking-wide border-b pb-2">Delivery Details</label>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Name</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Agricorp International Development Limited</p>
+            </div>
+          </div>
 
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Your company address" x-model="from.address"/>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Address</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Agricorp Kubacha, Kaduna, Nigeria</p>
+            </div>
+          </div>
 
-          <input className="mb-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder="Additional info" x-model="from.extra"/>
+          <div className="mb-2 md:mb-1 md:flex items-center">
+            <label className="w-32 text-gray-800 block font-bold text-sm tracking-wide">Delivery Term</label>
+            <div className="flex-1">
+              <p className="py-2 px-4 text-gray-700 leading-tight">Delivered within 3 days of Agricorp delivery request</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="flex -mx-1 bg-blue-200 py-2 items-center">
-        <div className="flex-1 px-1">
+        <div className="flex-1 px-1 pl-3">
           <span className="text-gray-800 tracking-wide text-sm font-bold mr-8">Serial No.</span>
           <span className="text-gray-800 tracking-wide text-sm font-bold">Material</span>
         </div>
@@ -96,59 +169,9 @@ function App() {
 
       <span x-for="invoice in items">
         <div className="flex -mx-1 py-2">
-          <div className="flex-1 px-1">
+          <div className="flex-1 px-1 pl-3">
             <span className="text-gray-800 mr-20">01</span>
             <span className="text-gray-800">Procurement and storage of 2000MT of Maize</span>
-          </div>
-
-          <div className="px-1 w-40 text-left">
-            <p className="text-gray-800">500MT</p>
-          </div>
-
-          <div className="px-1 w-32 text-left">
-            <p className="text-gray-800">10</p>
-          </div>
-
-          <div className="px-1 w-32 text-left">
-            <p className="text-gray-800">5000</p>
-          </div>
-
-          <div className="px-1 w-20 text-left">
-            <a href="#" className="text-red-500 hover:text-red-600 text-sm font-semibold"></a>
-          </div>
-        </div>
-      </span>
-
-      <span x-for="invoice in items">
-        <div className="flex -mx-1 py-2">
-          <div className="flex-1 px-1">
-            <span className="text-gray-800 mr-20">01</span>
-            <span className="text-gray-800">Procurement and storage of 2000MT of Maize</span>
-          </div>
-
-          <div className="px-1 w-40 text-left">
-            <p className="text-gray-800">500MT</p>
-          </div>
-
-          <div className="px-1 w-32 text-left">
-            <p className="text-gray-800">10</p>
-          </div>
-
-          <div className="px-1 w-32 text-left">
-            <p className="text-gray-800">5000</p>
-          </div>
-
-          <div className="px-1 w-20 text-left">
-            <a href="#" className="text-red-500 hover:text-red-600 text-sm font-semibold"></a>
-          </div>
-        </div>
-      </span>
-
-      <span x-for="invoice in items">
-        <div className="flex -mx-1 py-2">
-          <div className="flex-1 px-1">
-            <span className="text-gray-800 mr-24"></span>
-            <span className="text-gray-800 font-bold">Total</span>
           </div>
 
           <div className="px-1 w-40 text-left">
@@ -156,11 +179,11 @@ function App() {
           </div>
 
           <div className="px-1 w-32 text-left">
-            <p className="text-gray-800 font-bold">10</p>
+            <p className="text-gray-800">10</p>
           </div>
 
           <div className="px-1 w-32 text-left">
-            <p className="text-gray-800 font-bold">5000</p>
+            <p className="text-gray-800">5000</p>
           </div>
 
           <div className="px-1 w-20 text-left">
@@ -168,6 +191,101 @@ function App() {
           </div>
         </div>
       </span>
+
+      <span x-for="invoice in items">
+        <div className="flex -mx-1 py-2">
+          <div className="flex-1 px-1 pl-3">
+            <span className="text-gray-800 mr-20">02</span>
+            <span className="text-gray-800">Procurement and storage of 2000MT of Maize</span>
+          </div>
+
+          <div className="px-1 w-40 text-left">
+            <p className="text-gray-800">500MT</p>
+          </div>
+
+          <div className="px-1 w-32 text-left">
+            <p className="text-gray-800">10</p>
+          </div>
+
+          <div className="px-1 w-32 text-left">
+            <p className="text-gray-800">5000</p>
+          </div>
+
+          <div className="px-1 w-20 text-left">
+            <a href="#" className="text-red-500 hover:text-red-600 text-sm font-semibold"></a>
+          </div>
+        </div>
+      </span>
+
+      <span x-for="invoice in items">
+        <div className="flex -mx-1 py-2">
+          <div className="flex-1 px-1 pl-3">
+            <span className="text-gray-800 mr-24"></span>
+            <span className="text-gray-800 font-bold">Total</span>
+          </div>
+
+          <div className="px-1 w-40 text-left">
+            <p className="text-gray-800">12000</p>
+          </div>
+
+          <div className="px-1 w-32 text-left">
+            <p className="text-gray-800 font-bold">266,000</p>
+          </div>
+
+          <div className="px-1 w-32 text-left">
+            <p className="text-gray-800 font-bold">742,000,000</p>
+          </div>
+
+          <div className="px-1 w-20 text-left">
+            <a href="#" className="text-red-500 hover:text-red-600 text-sm font-semibold"></a>
+          </div>
+        </div>
+      </span>
+    
+
+      <div className='mt-3'>
+        <p className='font-bold'>NB:</p>
+        <p className="py-2 text-gray-700 leading-tight">Delivery Shall be invoiced separately</p>
+        <p className="py-2 text-gray-700 leading-tight">One month assumed for storage</p>
+      </div>
+
+      <div className='mt-3'>
+        <p className='font-bold'>Safety Tips:</p>
+        <p className="py-2 text-gray-700 leading-tight">Your safety, your responsibility</p>
+        <p className="py-2 text-gray-700 leading-tight">Use PPEs as applicable in the work permit e.g. Googles, earmuffs and safety handgloves etc.</p>
+      </div>
+
+      <div className='mt-3'>
+        <p className='font-bold'>COVID-19 Prevention Tips:</p>
+        <p className="py-2 text-gray-700 leading-tight">1. Wash your hands/ sanitize with alcohol-based sanitizer</p>
+        <p className="py-2 text-gray-700 leading-tight">2. Use your nose mask</p>
+        <p className="py-2 text-gray-700 leading-tight">3. Maintain physical / social distancing</p>
+      </div>
+
+      <div className='mt-16'>
+        <span className='font-bold mr-24'> User Team Signature.................................................</span>
+        <span className='font-bold'>Date .........................................................</span>
+      </div>
+
+      <div className='flex justify-between mt-16'>
+        <p className='font-bold'> 
+        <span>Authorization Signature ..........................................</span>
+        <span className='mx-24'>Date .........................................................</span> 
+        <span>Total PO Value(N) 742,000,000</span>
+        </p>
+      </div>
+
+      <div className='mt-16'>
+        <p className="py-2 text-gray-700 leading-tight">1. An invoice and delivery note without reference to a Purchase Order will not be accepted by Agricorp.</p>
+        <p className="py-2 text-gray-700 leading-tight">2. The invoice should indicate the number of delivery note.</p>
+        <p className="py-2 text-gray-700 leading-tight">3. The invoice should indicate the Tax Identification Number of the Supplier.</p>
+        <p className="py-2 text-gray-700 leading-tight">4. The above Purchase Order excludes VAT and WHT. Taxes should be added/deducted at the point of invoicing.</p>
+        <p className="py-2 text-gray-700 leading-tight">5. Agricorp reserves the right to make any subsequent correction on this Purchase Order should it discover an error or ommision on it.</p>
+        <p className="py-2 text-gray-700 leading-tight">6. Agricorp will not be bound to recieve the Product/Services contained in this Purchase Order except it passes any required quality inspection or certification.</p>
+        <p className="py-2 text-gray-700 leading-tight">7. All our orders and purchases are subject to the General Condition of Purchase and Code of Business Conduct, this is available on request from the purchasing unit.</p>
+        <p className="py-2 text-gray-700 leading-tight">8. PO is valid only if it is recieved from Agricorp's accounting unit email, which is accounts@agricorpinternational.com.</p>
+        <p className="py-2 text-gray-700 leading-tight">9. Internet communications are not secure and therefore Agricorp does not accept legal responsibility for POs recieved due to breach in internt safety.</p>
+      </div>
     </div>
   </>
   );
